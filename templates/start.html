@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block start %}
+<h1> Welcome to Boggle! </h1>
+<p> The goal of Boggle is to score points by finding words in the random letters in the grid. The letters you use must be touching vertically, horizontally, or diagonally in a chain. </p>
+<form action="play-boggle"> 
+    <p> Ready to start? </p>
+    <button> Begin New Game </button>
+</form>
+{% endblock %}

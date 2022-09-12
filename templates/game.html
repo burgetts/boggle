@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block boggle_js %}
+ <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+ <script src="https://unpkg.com/axios/dist/axios.js"></script>
+ <script src="/static/boggle.js"></script>
+{% endblock %}
+
+{% block board %}
+<h1> Boggle </h1>
+<p class="timer"> Timer: </p>
+<p class="timer" id="timer"> </p> <br>
+<p class="score">    Score: </p>
+<p id="score" class="score"> 0 </p>
+<div class="game-container">
+    {% for row in board %}
+        {% for letter in row %}
+    <div class="game-letter"> {{letter}} </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block guess %}
+<form id="guess-form" methods="get">
+    <input id="guess" type="text" name="guess" placeholder="Enter guess here">
+    <button> GUESS </button>
+    <p class="secretmessage"> </p>
+</form>
+
+{% endblock %}

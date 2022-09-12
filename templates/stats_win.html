@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block stats %}
+<p> Nice job! You now have the record-breaking score of {{session.get('score', 0)}}! You have played the game {{session.get('times_played', 0)}} times. </p>
+<form action="/">
+    <button> Play Again! </button>
+</form>
+{% endblock %}
